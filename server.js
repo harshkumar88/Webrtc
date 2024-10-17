@@ -6,15 +6,17 @@ const app = express();
 app.use(cors());
 app.use(error);
 
+// app.use(express.static(path.join(__dirname, "client", "build")));
+// app.get("/*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+// });
+
 const server = require("http").createServer(app);
 
 //socket connection;
 const io = require("socket.io")(server, {
   cors: {
-    origin: [
-      "https://webrtc-client-bl47.onrender.com/",
-      "http://localhost:5173",
-    ],
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
