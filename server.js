@@ -12,7 +12,7 @@ const io = require("socket.io")(server, {
   cors: {
     origin: [
       "http://localhost:5173",
-      "https://webrtc-backend-dc2l.onrender.com/",
+      "https://webrtc-client-bl47.onrender.com/",
     ],
   },
 });
