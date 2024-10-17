@@ -9,7 +9,12 @@ const server = require("http").createServer(app);
 
 //socket connection;
 const io = require("socket.io")(server, {
-  cors: { origin: "http://localhost:5173" },
+  cors: {
+    origin: [
+      "http://localhost:5173",
+      "https://webrtc-client-bl47.onrender.com/",
+    ],
+  },
 });
 const PORT = 3000 || process.env.PORT;
 
