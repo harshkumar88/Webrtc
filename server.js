@@ -3,11 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
-const corsOptions = {
-  origin: ["https://webrtc-client-bl47.onrender.com/"],
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(error);
 
 const server = require("http").createServer(app);
@@ -16,8 +12,8 @@ const server = require("http").createServer(app);
 const io = require("socket.io")(server, {
   cors: {
     origin: [
-      "http://localhost:5173",
       "https://webrtc-client-bl47.onrender.com/",
+      "http://localhost:5173",
     ],
     methods: ["GET", "POST"],
   },
